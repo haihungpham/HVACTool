@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ── Forma Design Tokens ─────────────────────────────────────── */
+@theme {
+  --color-forma-bg: #f7f7f7;
+  --color-forma-surface: #ffffff;
+  --color-forma-border: #e8e8e8;
+  --color-forma-border-light: #f0f0f0;
+  --color-forma-text: #333333;
+  --color-forma-text-secondary: #767676;
+  --color-forma-text-muted: #999999;
+  --color-forma-accent: #0696d7;
+  --color-forma-accent-hover: #0580b8;
+  --color-forma-green: #1ea87b;
+  --color-forma-green-hover: #178f69;
+  --color-forma-selected: #e8f4fd;
+  --color-forma-selected-border: #b8dff5;
+  --color-forma-icon-strip: #f2f2f2;
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-forma-bg);
+  color: var(--color-forma-text);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Forma-style input field ─────────────────────────────────── */
+.forma-input {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #333;
+  text-align: right;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.forma-input:focus {
+  border-color: var(--color-forma-accent);
+  box-shadow: 0 0 0 2px rgba(6, 150, 215, 0.15);
+}
+
+/* ── Forma Slider ────────────────────────────────────────────── */
+.slider-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track {
+  width: 100%;
+  height: 3px;
+  background-color: #e0e0e0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.slider-fill {
+  position: absolute;
+  height: 3px;
+  background-color: var(--color-forma-accent);
+  border-radius: 999px;
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: white;
+  border: 2px solid var(--color-forma-accent);
+  cursor: pointer;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.slider-raw {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* ── Forma Section Header ────────────────────────────────────── */
+.forma-section {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-forma-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Forma Icon Button ───────────────────────────────────────── */
+.forma-icon-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #555;
+  transition: background-color 0.15s, color 0.15s;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.forma-icon-btn:hover {
+  background-color: #e8e8e8;
+}
+
+.forma-icon-btn.active {
+  background-color: var(--color-forma-selected);
+  color: var(--color-forma-accent);
+}
+
+/* ── Scrollbar styles ────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
